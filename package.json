@@ -1,0 +1,23 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "description": "typescript study",
+  "main": "index.js",
+  "scripts": {
+    "app": "node ./compiled/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keepbang/typescript-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keepbang/typescript-study/issues"
+  },
+  "homepage": "https://github.com/keepbang/typescript-study#readme",
+  "dependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.3"
+  }
+}
