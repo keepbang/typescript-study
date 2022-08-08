@@ -1,16 +1,16 @@
-export class Agent {
-  private readonly _name: string;
+import {Person} from "./Person";
 
-  constructor(name= 'FA') {
-    this._name = name;
+export class Agent extends Person {
+
+  constructor(name = "FA") {
+    super(name);
   }
 
   get name(): string {
-    return this._name;
+    return this.name;
   }
 
   introduce(): void {
-    console.log(`Agent name : ${this._name}`);
+    console.log(`Agent name : ${this.name}`);
   }
-
 }

@@ -1,18 +1,18 @@
 import {Agent} from "./Agent";
+import {Person} from "./Person";
+import {Teams} from "./Teams";
+import {PlayerBuilder} from "./PlayerBuilder";
 
-const DEFAULT_TEAM = "FA";
-
-export class Player {
-  private name: string;
-  private team: string;
+export class Player extends Person {
+  private team: Teams;
   private contractPeriodMonth: number;
   private agent: Agent;
 
-  constructor(name: string, agent: Agent, team = DEFAULT_TEAM, contractPeriodMonth = 0) {
-    this.name = name;
-    this.team = team;
-    this.contractPeriodMonth = contractPeriodMonth;
-    this.agent = agent;
+  constructor(builder: PlayerBuilder) {
+    super(builder.name);
+    this.team = builder.team;
+    this.contractPeriodMonth = builder.contractPeriodMonth;
+    this.agent = builder.agent;
   }
 
   introduce(): void {
@@ -23,13 +23,13 @@ export class Player {
     console.log(`  ⌙ agent : ${this.agent.name}`);
   }
 
-  join(team: string, contractMonth: number): void {
+  join(team: Teams, contractMonth: number): void {
     this.team = team;
     this.contractPeriodMonth = contractMonth;
   }
 
   leave(): void {
-    this.team = DEFAULT_TEAM;
+    this.team = Teams.NA;
   }
 
   extendContract(periodMonth: number): void {

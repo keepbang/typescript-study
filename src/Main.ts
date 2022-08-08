@@ -23,15 +23,21 @@
 // account.deposit(money);
 // console.log(`입금 : ${money}, 잔액 : ${account.balance}`);
 
-import {BusinessCheckingAccount} from "./domain/BusinessCheckingAccount";
+// import {BusinessCheckingAccount} from "./domain/BusinessCheckingAccount";
+//
+// const business: BusinessCheckingAccount = new BusinessCheckingAccount();
+// business.deposit(100_000);
+// try {
+//   business.open(10);
+// } catch (e) {
+//   console.error(e);
+// }
+//
+// business.open(1_000);
+// console.log(`월 수수료 : ${business.chargeFee()}`)
 
-const business: BusinessCheckingAccount = new BusinessCheckingAccount();
-business.deposit(100_000);
-try {
-  business.open(10);
-} catch (e) {
-  console.error(e);
-}
+import {TransferMarketSimulator} from "./domain/TransferMarketSimulator";
 
-business.open(1_000);
-console.log(`월 수수료 : ${business.chargeFee()}`)
+const simulator = TransferMarketSimulator.getInstance();
+
+simulator.simulate();
