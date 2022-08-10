@@ -6,10 +6,6 @@ export class Agent extends Person {
     super(name);
   }
 
-  get name(): string {
-    return this.name;
-  }
-
   introduce(): void {
     console.log(`Agent name : ${this.name}`);
   }
